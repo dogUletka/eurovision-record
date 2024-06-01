@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Eurovision Animation</title>
+		<style>
+			body {
+				margin: 0;
+				background-color: #5b1f59;
+				overflow: hidden;
+			}
+
+			.eurovision {
+				aspect-ratio: var(--asr, 4/1);
+				display: grid;
+				grid-auto-flow: column;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				opacity: 0;
+				animation: fadeIn 2s ease forwards;
+			}
+
+			.eurovision > b {
+				animation: Y var(--animdur, 3s) var(--animdel, 0s) var(--animtf, linear)
+					infinite;
+				background: repeating-linear-gradient(
+					var(--deg, 0deg),
+					var(--c1, orange),
+					var(--c2, hotpink),
+					var(--c3, yellow),
+					var(--c2, hotpink),
+					var(--c1, orange)
+				);
+				background-size: 100% 500%;
+				display: block;
+			}
+
+			.eurovision > b:nth-of-type(odd) {
+				--animdel: calc(var(--n, 1) * 50ms);
+			}
+
+			.eurovision > b:nth-of-type(even) {
+				--animdel: calc(var(--n, 1) * 100ms);
+			}
+
+			.eurovision > b.span-2 {
+				grid-column: span 2;
+			}
+			.eurovision > b.span-3 {
+				grid-column: span 3;
+			}
+			.eurovision > b.span-4 {
+				grid-column: span 4;
+			}
+			.eurovision > b.span-5 {
+				grid-column: span 5;
+			}
+			.eurovision > b.span-6 {
+				grid-column: span 6;
+			}
+			.eurovision > b.span-7 {
+				grid-column: span 7;
+			}
+			.eurovision > b.span-8 {
+				grid-column: span 8;
+			}
+
+			.header {
+				--c1: #32e83e;
+				--c2: #e6f58b;
+				--c3: #32e83e;
+			}
+
+			@keyframes Y {
+				to {
+					background-position-y: 250%;
+				}
+			}
+
+			@keyframes fadeIn {
+				to {
+					opacity: 1;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="eurovision header">
+			<b class="span-2"></b>
+			<b class="span-3"></b>
+			<b class="span-4"></b>
+			<b class="span-5"></b>
+			<b class="span-6"></b>
+			<b class="span-7"></b>
+			<b class="span-8"></b>
+			<b></b>
+			<b></b>
+			<b></b>
+			<b></b>
+			<b></b>
+			<b></b>
+			<b></b>
+			<b></b>
+			<b></b>
+			<b></b>
+			<b></b>
+		</div>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const elements = Array.from(
+					document.querySelectorAll('.eurovision > b')
+				)
+				elements.forEach((el, index) => {
+					el.style.setProperty('--n', Math.random() * 20)
+				})
+
+				elements.sort(() => Math.random() - 0.5)
+				const container = document.querySelector('.eurovision')
+				elements.forEach(el => container.appendChild(el))
+			})
+		</script>
+	</body>
+</html>

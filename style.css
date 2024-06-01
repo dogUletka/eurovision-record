@@ -1,0 +1,132 @@
+.eurovision {
+	aspect-ratio: var(--asr, 4/1);
+	display: grid;
+	grid-auto-flow: column;
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+}
+
+.eurovision > b {
+	animation: Y var(--animdur, 10s) var(--animdel, 0s) var(--animtf, linear)
+		infinite;
+	background: repeating-linear-gradient(
+		var(--deg, 0deg),
+		var(--c1, orange),
+		var(--c2, hotpink),
+		var(--c3, yellow),
+		var(--c2, hotpink),
+		var(--c1, orange)
+	);
+	background-size: 100% 500%;
+	display: block;
+	will-change: transform;
+}
+
+.eurovision > b:nth-of-type(1) {
+	--animdel: 50ms;
+}
+.eurovision > b:nth-of-type(2) {
+	--animdel: 100ms;
+}
+.eurovision > b:nth-of-type(3) {
+	--animdel: 150ms;
+}
+.eurovision > b:nth-of-type(4) {
+	--animdel: 200ms;
+}
+.eurovision > b:nth-of-type(5) {
+	--animdel: 250ms;
+}
+.eurovision > b:nth-of-type(6) {
+	--animdel: 300ms;
+}
+.eurovision > b:nth-of-type(7) {
+	--animdel: 350ms;
+}
+.eurovision > b:nth-of-type(8) {
+	--animdel: 400ms;
+}
+.eurovision > b:nth-of-type(9) {
+	--animdel: 450ms;
+}
+.eurovision > b:nth-of-type(10) {
+	--animdel: 400ms;
+}
+.eurovision > b:nth-of-type(11) {
+	--animdel: 350ms;
+}
+.eurovision > b:nth-of-type(12) {
+	--animdel: 300ms;
+}
+.eurovision > b:nth-of-type(13) {
+	--animdel: 250ms;
+}
+.eurovision > b:nth-of-type(14) {
+	--animdel: 200ms;
+}
+.eurovision > b:nth-of-type(15) {
+	--animdel: 150ms;
+}
+.eurovision > b:nth-of-type(16) {
+	--animdel: 100ms;
+}
+.eurovision > b:nth-of-type(17) {
+	--animdel: 50ms;
+}
+.eurovision > b:nth-of-type(18) {
+	--animdel: 100ms;
+}
+.eurovision > b:nth-of-type(19) {
+	--animdel: 150ms;
+}
+.eurovision > b:nth-of-type(20) {
+	--animdel: 250ms;
+}
+.eurovision > b:nth-of-type(21) {
+	--animdel: 350ms;
+}
+.eurovision > b:nth-of-type(22) {
+	--animdel: 450ms;
+}
+.eurovision > b:nth-of-type(23) {
+	--animdel: 550ms;
+}
+.eurovision > b:nth-of-type(24) {
+	--animdel: 500ms;
+}
+.eurovision > b:nth-of-type(25) {
+	--animdel: 350ms;
+}
+
+.red-shift {
+	--c1: #ff5ce5;
+	--c2: #ffef5f;
+	--c3: #82fc3b;
+	--animtf: linear(
+		0,
+		0.006,
+		0.025 2.8%,
+		0.101 6.1%,
+		0.539 18.9%,
+		0.721 25.3%,
+		0.849 31.5%,
+		0.937 38.1%,
+		0.968 41.8%,
+		0.991 45.7%,
+		1.006 50.1%,
+		1.015 55%,
+		1.017 63.9%,
+		1.001
+	);
+}
+
+@keyframes Y {
+	to {
+		background-position-y: 250%;
+	}
+}
+
+body {
+	margin: 0;
+}
